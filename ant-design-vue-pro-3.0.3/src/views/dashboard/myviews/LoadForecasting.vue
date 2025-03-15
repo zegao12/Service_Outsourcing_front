@@ -9,7 +9,7 @@
     <div class="content">
       <div class="section left">
         <h3>短时功率预测曲线 (3天)</h3>
-        <div class="chart"></div>
+        <div class="chart" ref="shortTermChart"></div>
       </div>
 
       <div class="section right">
@@ -25,7 +25,7 @@
 
       <div class="section left">
         <h3>超短时功率预测曲线 (4小时)</h3>
-        <div class="chart"></div>
+        <div class="chart" ref="ultraShortTermChart"></div>
       </div>
 
       <div class="section right">
@@ -43,8 +43,62 @@
 </template>
 
   <script>
+  import * as echarts from 'echarts'
+
   export default {
-    name: 'PowerPredictionUI'
+    name: 'PowerPredictionUI',
+    mounted () {
+      this.initShortTermChart()
+      this.initUltraShortTermChart()
+    },
+    methods: {
+      initShortTermChart () {
+        const chartDom = this.$refs.shortTermChart
+        const myChart = echarts.init(chartDom)
+
+        const option = {
+          xAxis: {
+            type: 'category',
+            data: ['0', '12', '24', '36', '48', '60', '72']
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: [
+            {
+              data: [120, 200, 150, 80, 70, 110, 130, 100],
+              type: 'line',
+              smooth: true
+            }
+          ]
+        }
+
+        myChart.setOption(option)
+      },
+      initUltraShortTermChart () {
+        const chartDom = this.$refs.ultraShortTermChart
+        const myChart = echarts.init(chartDom)
+
+        const option = {
+          xAxis: {
+            type: 'category',
+            data: ['Hour 1', 'Hour 2', 'Hour 3', 'Hour 4']
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: [
+            {
+              data: [30, 50, 40, 60, 55, 45, 35],
+              type: 'line',
+              smooth: true
+            }
+          ]
+        }
+
+        myChart.setOption(option)
+      }
+    }
   }
   </script>
 

@@ -52,7 +52,8 @@ const constantRouterComponents = {
   BindingSettings: () => import('@/views/account/settings/Binding'),
   NotificationSettings: () => import('@/views/account/settings/Notification'),
 
-  LoadForecasting: () => import('@/views/dashboard/myviews/LoadForecasting')
+  LoadForecasting: () => import('@/views/dashboard/myviews/LoadForecasting'),
+  LoadForecasting2: () => import('@/views/dashboard/myviews/LoadForecasting2')
   // 'TestWork': () => import(/* webpackChunkName: "TestWork" */ '@/views/dashboard/TestWork')
 }
 

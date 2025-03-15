@@ -873,6 +873,27 @@ const userNav = options => {
         show: true
       },
       component: 'LoadForecasting'
+    },
+    {
+      name: 'LoadForecasting2',
+      parentId: 20001,
+      id: 20004,
+      meta: {
+        title: '负荷预测2',
+        show: true
+      },
+      component: 'LoadForecasting2'
+    },
+    {
+      name: 'BasicSettings',
+      path: '/account/settings/basic',
+      parentId: 20001,
+      id: 20003,
+      meta: {
+        title: '基本设置',
+        show: false
+      },
+      component: 'BasicSetting'
     }
   ]
   const json = builder(nav)
