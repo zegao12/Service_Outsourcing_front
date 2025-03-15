@@ -92,37 +92,37 @@
 
         <div class="error-box">
           <div class="error-header">气象信息</div>
-            <div class="error-grid">
-              <div class="error-item">
-                <i class="icon-light"></i>
-                <div>
-                  <div class="error-label">光照</div>
-                  <div class="error-value">208.0 lx</div>
-                </div>
+          <div class="error-grid">
+            <div class="error-item">
+              <i class="icon-light"></i>
+              <div>
+                <div class="error-label">光照</div>
+                <div class="error-value">208.0 lx</div>
               </div>
-              <div class="error-item">
-                <i class="icon-wind"></i>
-                <div>
-                  <div class="error-label">风速</div>
-                  <div class="error-value">1.5 m/s</div>
-                </div>
+            </div>
+            <div class="error-item">
+              <i class="icon-wind"></i>
+              <div>
+                <div class="error-label">风速</div>
+                <div class="error-value">1.5 m/s</div>
               </div>
-              <div class="error-item">
-                <i class="icon-humidity"></i>
-                <div>
-                  <div class="error-label">湿度</div>
-                  <div class="error-value">82.8 %</div>
-                </div>
+            </div>
+            <div class="error-item">
+              <i class="icon-humidity"></i>
+              <div>
+                <div class="error-label">湿度</div>
+                <div class="error-value">82.8 %</div>
               </div>
-              <div class="error-item">
-                <i class="icon-temperature"></i>
-                <div>
-                  <div class="error-label">温度</div>
-                  <div class="error-value">23.2 ℃</div>
-                </div>
+            </div>
+            <div class="error-item">
+              <i class="icon-temperature"></i>
+              <div>
+                <div class="error-label">温度</div>
+                <div class="error-value">23.2 ℃</div>
               </div>
             </div>
           </div>
+        </div>
       </div>
 
     </div>
@@ -216,7 +216,7 @@ export default {
 
 /* 左侧容器（曲线图） */
 .left-container {
-  flex: 7;
+  flex: 6;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -224,7 +224,7 @@ export default {
 
 /* 右侧容器（误差统计） */
 .right-container {
-  flex: 3;
+  flex: 4;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -238,13 +238,6 @@ export default {
   border: 2px solid #1890ff;
   flex: 1; /* 让所有盒子填充满容器 */
 }
-
-.chart {
-  height: 300px;
-  background-color: #ffffff;
-  border: 1px solid #d9d9d9;
-}
-
 .stats {
   display: flex;
   flex-direction: column;
@@ -280,7 +273,7 @@ export default {
   padding: 5px 0;
   border-bottom: 2px solid #00aaff;
   margin-bottom: 10px;
-  color: #00aaff;
+  color: rgb(27,243,248);;
 }
 
 .station-content {
@@ -333,7 +326,7 @@ export default {
   padding: 5px 0;
   border-bottom: 2px solid #00aaff;
   margin-bottom: 10px;
-  color: #00aaff;
+  color: rgb(27,243,248);
 }
 
 .install-grid {
@@ -422,7 +415,7 @@ export default {
 .icon-temperature::before { content: "🌡️"; } /* 温度图标 */
 
 .left-container {
-  flex: 7;
+  flex: 6;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -444,12 +437,12 @@ export default {
   padding: 5px 0;
   border-bottom: 2px solid #00aaff; /* 标题下划线与右侧盒子统一 */
   margin-bottom: 10px;
-  color: #00aaff; /* 标题颜色与右侧盒子统一 */
+  color: rgb(27,243,248); /* 标题颜色与右侧盒子统一 */
 }
 
 .chart {
   height: 300px;
-  background-color: #ffffff; /* 图表背景色 */
+  background-color: #0a1d4d; /* 图表背景色 */
   border: 1px solid #d9d9d9; /* 图表边框 */
   border-radius: 5px; /* 图表圆角 */
   margin-top: 10px; /* 与标题的间距 */

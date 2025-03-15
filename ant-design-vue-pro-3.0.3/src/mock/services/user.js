@@ -885,6 +885,16 @@ const userNav = options => {
       component: 'LoadForecasting2'
     },
     {
+      name: 'EnergyManage',
+      parentId: 20001,
+      id: 20005,
+      meta: {
+        title: '能源管理',
+        show: true
+      },
+      component: 'EnergyManage'
+    },
+    {
       name: 'BasicSettings',
       path: '/account/settings/basic',
       parentId: 20001,
