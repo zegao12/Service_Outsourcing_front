@@ -155,8 +155,13 @@ export default {
         }
     },
         xAxis: {
-          type: 'category',
-          data: ['0', '12', '24', '36', '48', '60', '72']
+          name: '(h)',
+          nameLocation: 'end',
+          nameTextStyle: {
+            color: 'white',
+            padding: 10
+          },
+         splitLine: { show: false, width: 1 }
         },
         yAxis: {
           name: '出力/p.u.',
