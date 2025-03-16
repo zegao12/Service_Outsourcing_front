@@ -1,9 +1,9 @@
 <template>
   <div class="app-container">
     <div class="header">
-      <div>返回首页</div>
-      <div >安科瑞功率预测系统</div>
-      <div>注销</div>
+      <div class="header2">返回首页</div>
+      <div class="header1">安科瑞功率预测系统</div>
+      <div class="header2">注销</div>
     </div>
 
     <div class="content">
@@ -96,20 +96,30 @@
 
   <style scoped>
   .app-container {
-    background-color: #e6f7ff;
-    color: #1890ff;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    overflow-y: auto;
-  }
+  background-color: #0a1d4d;
+  color: #1890ff;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0a1d4d;
+  color: rgb(27,243,248);
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 2px solid #00aaff;
+  font-size: 18px;
+}
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    background-color: #1890ff;
-    color: #ffffff;
-    padding: 10px;
-  }
+.header1 {
+  font-size: 25px;
+}
+
+.header2 {
+  margin-top: 6px;
+}
 
   .content {
     display: grid;
