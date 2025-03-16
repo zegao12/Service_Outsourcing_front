@@ -24,6 +24,7 @@ const constantRouterComponents = {
   AdvanceForm: () => import('@/views/form/advancedForm/AdvancedForm'),
 
   // list
+  SystemLog: () => import('@/views/list/SystemLog'),
   EnergyManage: () => import('@/views/list/EnergyManage'),
   TableList: () => import('@/views/list/TableList'),
   StandardList: () => import('@/views/list/BasicList'),
@@ -54,7 +55,8 @@ const constantRouterComponents = {
   NotificationSettings: () => import('@/views/account/settings/Notification'),
 
   LoadForecasting: () => import('@/views/dashboard/myviews/LoadForecasting'),
-  LoadForecasting2: () => import('@/views/dashboard/myviews/LoadForecasting2')
+  LoadForecasting2: () => import('@/views/dashboard/myviews/LoadForecasting2'),
+  EnergyConsumption: () => import('@/views/dashboard/myviews/EnergyConsumption')
   // 'TestWork': () => import(/* webpackChunkName: "TestWork" */ '@/views/dashboard/TestWork')
 }
 

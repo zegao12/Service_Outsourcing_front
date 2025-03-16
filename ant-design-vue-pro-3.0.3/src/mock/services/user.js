@@ -895,6 +895,26 @@ const userNav = options => {
       component: 'EnergyManage'
     },
     {
+      name: 'EnergyConsumption',
+      parentId: 20001,
+      id: 20006,
+      meta: {
+        title: '能耗数据统计',
+        show: true
+      },
+      component: 'EnergyConsumption'
+    },
+    {
+      name: 'SystemLog',
+      parentId: 20001,
+      id: 20007,
+      meta: {
+        title: '系统日志',
+        show: true
+      },
+      component: 'SystemLog'
+    },
+    {
       name: 'BasicSettings',
       path: '/account/settings/basic',
       parentId: 20001,
