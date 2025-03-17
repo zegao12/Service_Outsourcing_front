@@ -14,11 +14,11 @@
               <i class="icon-enterprise"></i>
               <h3 style="color: white;">企业信息</h3>
             </div>
-            <div class="info-row">
+            <!-- <div class="info-row">
               <i class="icon-platform"></i>
               <span class="info-label">企业</span>
               <a-input v-model="Enterprise" placeholder="平台机构" class="custom-input"/>
-            </div>
+            </div> -->
             <div class="info-row">
               <i class="icon-code"></i>
               <span>信用编码: xxxx-xxxx-xxxx-xxxx</span>
@@ -195,60 +195,71 @@
       </section>
 
       <!-- 统计图表 -->
-      <section class="charts">
-        <div id="daily-energy-trend-chart" class="chart-placeholder"></div>
-        <div id="monthly-energy-analysis-chart" class="chart-placeholder"></div>
-      </section>
+      <div class="charts">
+        <div class="title-row">
+          <i class="icon-trend"></i>
+          <h3 style="color: white;">用能趋势</h3>
+        </div>
+        <div class="content1">
+          <div class="section left">
+            <div class="section-header ">超短时功率预测曲线 (4小时)</div>
+            <div class="chart" ref="shortTermChart"></div>
+          </div>
+          <div class="section right" padding="20px">
+            <div class="section-header ">超短时功率预测曲线 (4小时)</div>
+            <div class="chart" ref="ultraShortTermChart"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import echarts from 'echarts'
+import * as echarts from 'echarts'
 
 export default {
-  name: 'EnergyDashboard',
-  data () {
-    return {
-      enterprise: ''
-    }
-  },
+  name: 'PowerPredictionUI',
   mounted () {
-    this.initDailyEnergyTrendChart()
-    this.initMonthlyEnergyAnalysisChart()
+    this.initShortTermChart()
+    this.initUltraShortTermChart()
   },
   methods: {
-    initDailyEnergyTrendChart () {
-      const chartDom = document.getElementById('daily-energy-trend-chart')
+    initShortTermChart () {
+      const chartDom = this.$refs.shortTermChart
       const myChart = echarts.init(chartDom)
       const option = {
-        // 当日用能趋势图配置，暂时为空
-        tooltip: {},
-        xAxis: {
-          type: 'category',
-          data: []
-        },
-        yAxis: {
-          type: 'value'
-        },
-        series: []
+        xAxis: { splitLine: { show: false, width: 1 } },
+        yAxis: { splitLine: { show: true, lineStyle: { type: 'dashed' } } },
+        series: [{
+          data: [[0, -1.96], [12, 82.85], [18, -2], [24, 1], [30, 2], [36, 54.76], [42, 0], [48, 0], [54, 38.55], [60, 60], [66, 22.22], [72, 0]],
+          type: 'line',
+          lineStyle: {
+      normal: {
+        color: 'rgb(223,126,133)'
+      }
+    },
+          smooth: true
+        }]
       }
       myChart.setOption(option)
     },
-    initMonthlyEnergyAnalysisChart () {
-      const chartDom = document.getElementById('monthly-energy-analysis-chart')
+    initUltraShortTermChart () {
+      const chartDom = this.$refs.ultraShortTermChart
       const myChart = echarts.init(chartDom)
       const option = {
-        // 月度用能分析图配置，暂时为空
-        tooltip: {},
-        xAxis: {
-          type: 'category',
-          data: []
-        },
-        yAxis: {
-          type: 'value'
-        },
-        series: []
+        xAxis: { splitLine: { show: false, width: 1 } },
+        yAxis: { splitLine: { show: true, lineStyle: { type: 'dashed' } } },
+        series: [{
+          data: [[50, 80], [70, 90], [120, 85], [150, 75], [180, 60], [200, 45], [220, 30], [240, 15], [230, 20], [210, 35], [190, 50], [170, 65], [140, 70], [110, 80], [90, 40], [60, 55], [40, 60], [20, 70]],
+          type: 'line',
+          lineStyle: {
+      normal: {
+        color: 'rgb(223,126,133)'
+      }
+    },
+          smooth: true
+        }]
       }
       myChart.setOption(option)
     }
@@ -510,15 +521,46 @@ export default {
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-bottom: 0px; /* 增加标题与下方内容的间距，看起来更协调 */
+}
+.content1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-top: 10px;
+  }
+.section {
+  background-color: #0a1d4d; /* 背景色与右侧盒子统一 */
+  border: 2px solid #00aaff; /* 边框颜色与右侧盒子统一 */
+  border-radius: 8px; /* 圆角与右侧盒子统一 */
+  padding: 15px; /* 内边距与右侧盒子统一 */
+  color: #ffffff; /* 文字颜色与右侧盒子统一 */
+  font-family: Arial, sans-serif;
+}
+.chart {
+  height: 300px;
+  background-color: #0a1d4d;/* 图表背景色 */
+  border: 1px solid #d9d9d9; /* 图表边框 */
+  border-radius: 5px; /* 图表圆角 */
+  margin-top: 10px; /* 与标题的间距 */
+  align-self: center;
+}
+.section-header {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 0;
+  border-bottom: 2px solid #00aaff; /* 标题下划线与右侧盒子统一 */
+  margin-bottom: 10px;
+  color: rgb(27,243,248); /* 标题颜色与右侧盒子统一 */
+}
+.icon-trend::before {
+  content: "📈";
+  font-size: 20px;
+  vertical-align: middle;
 }
 .charts {
-  display: flex;
-  justify-content: space-around;
-}
-.chart-placeholder {
-  width: 650px;
-  height: 300px;
-  background-color: #f0f0f0;
+  background: #0a1d4d;
+  padding: 20px;
+  border-radius: 10px;
 }
 </style>
