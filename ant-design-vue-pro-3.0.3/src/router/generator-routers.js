@@ -54,6 +54,7 @@ const constantRouterComponents = {
   BindingSettings: () => import('@/views/account/settings/Binding'),
   NotificationSettings: () => import('@/views/account/settings/Notification'),
 
+  LoadTemperatureCurve: () => import('@/views/dashboard/myviews/LoadTemperatureCurve'),
   LoadForecasting: () => import('@/views/dashboard/myviews/LoadForecasting'),
   LoadForecasting2: () => import('@/views/dashboard/myviews/LoadForecasting2'),
   EnergyConsumption: () => import('@/views/dashboard/myviews/EnergyConsumption')
