@@ -915,6 +915,16 @@ const userNav = options => {
       component: 'SystemLog'
     },
     {
+      name: 'LoadTemperatureCurve',
+      parentId: 20001,
+      id: 20008,
+      meta: {
+        title: '负荷-气温曲线',
+        show: true
+      },
+      component: 'LoadTemperatureCurve'
+    },
+    {
       name: 'BasicSettings',
       path: '/account/settings/basic',
       parentId: 20001,
