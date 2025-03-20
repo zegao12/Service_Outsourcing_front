@@ -19,6 +19,7 @@ const constantRouterComponents = {
   Analysis: () => import('@/views/dashboard/Analysis'),
 
   // form
+  DataUpload: () => import('@/views/form/basicForm/DataUpload'),
   BasicForm: () => import('@/views/form/basicForm'),
   StepForm: () => import('@/views/form/stepForm/StepForm'),
   AdvanceForm: () => import('@/views/form/advancedForm/AdvancedForm'),

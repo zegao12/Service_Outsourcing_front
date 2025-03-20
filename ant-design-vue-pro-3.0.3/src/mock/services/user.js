@@ -925,6 +925,15 @@ const userNav = options => {
       component: 'LoadTemperatureCurve'
     },
     {
+      name: 'DataUpload',
+      parentId: 20001,
+      id: 20009,
+      meta: {
+        title: '数据上传'
+      },
+      component: 'DataUpload'
+    },
+    {
       name: 'BasicSettings',
       path: '/account/settings/basic',
       parentId: 20001,

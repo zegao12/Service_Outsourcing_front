@@ -49,10 +49,13 @@ export default {
   'form.basic-form.captcha.second': '秒',
   'form.basic-form.form.optional': '（选填）',
   'form.basic-form.form.submit': '提交',
+  'form.basic-form.form.datasubmit': '上传数据',
+  'form.basic-form.form.predict': '点击预测',
   'form.basic-form.form.save': '保存',
   'form.basic-form.email.placeholder': '邮箱',
   'form.basic-form.password.placeholder': '至少6位密码，区分大小写',
   'form.basic-form.confirm-password.placeholder': '确认密码',
   'form.basic-form.phone-number.placeholder': '手机号',
-  'form.basic-form.verification-code.placeholder': '验证码'
+  'form.basic-form.verification-code.placeholder': '验证码',
+  'form.basic-form.title.modelselect': '模型选择'
 }

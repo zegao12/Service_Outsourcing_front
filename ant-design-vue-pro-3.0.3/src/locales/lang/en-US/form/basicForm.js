@@ -52,10 +52,13 @@ export default {
   'form.basic-form.captcha.second': 'sec',
   'form.basic-form.form.optional': ' (optional) ',
   'form.basic-form.form.submit': 'Submit',
+  'form.basic-form.form.datasubmit': 'Data upload',
+  'form.basic-form.form.predict': 'Click to predict',
   'form.basic-form.form.save': 'Save',
   'form.basic-form.email.placeholder': 'Email',
   'form.basic-form.password.placeholder': 'Password',
   'form.basic-form.confirm-password.placeholder': 'Confirm password',
   'form.basic-form.phone-number.placeholder': 'Phone number',
-  'form.basic-form.verification-code.placeholder': 'Verification code'
+  'form.basic-form.verification-code.placeholder': 'Verification code',
+  'form.basic-form.title.modelselect': 'Model selection'
 }
