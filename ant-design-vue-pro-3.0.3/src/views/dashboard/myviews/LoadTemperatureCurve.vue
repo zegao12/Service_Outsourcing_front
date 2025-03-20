@@ -1,25 +1,67 @@
 <template>
   <div class="app-container">
-    <div class="header">
-      <div class="header2">返回首页</div>
-      <div class="header1">安科瑞功率预测系统</div>
-      <div class="header2">注销</div>
-    </div>
-
     <div class="content">
       <div class="section">
         <div class="section-header" style="text-align: left;font-size: large;color: white;">负荷-气温曲线</div>
         <div class="chart" ref="shortTermChart"></div>
+        <div class="section-header" style="text-align: left;font-size: large;color: white;margin-top: 20px;">负荷曲线（表）</div>
+        <div class="table-container">
+          <table class="load-table">
+            <thead>
+              <tr>
+                <th>日期</th>
+                <th v-for="(col, index) in tableHeader.slice(1)" :key="index">{{ col }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>负荷</td>
+                <td v-for="(data, index) in tableData" :key="index">{{ data }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- 新增温度曲线表格 -->
+        <div class="section-header" style="text-align: left;font-size: large;color: white;margin-top: 20px;">温度曲线（表）</div>
+        <div class="table-container">
+          <table class="temp-table">
+            <thead>
+              <tr>
+                <th>日期</th>
+                <th v-for="(col, index) in tempTableHeader.slice(1)" :key="index">{{ col }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>温度</td>
+                <td v-for="(data, index) in tempTableData" :key="index">{{ data }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 </template>
-
   <script>
   import * as echarts from 'echarts'
+  import { Select, DatePicker } from 'ant-design-vue'
 
   export default {
     name: 'PowerPredictionUI',
+    components: {
+      ASelect: Select,
+      ADatePicker: DatePicker
+    },
+    data () {
+      return {
+        selectedCity: '广州',
+        tableHeader: ['日期', '2020-06-01 00:00', '2020-06-01 01:00', '2020-06-01 02:00', '2020-06-01 03:00', '2020-06-01 04:00', '2020-06-01 05:00', '2020-06-01 06:00', '2020-06-01 07:00'],
+        tableData: [9495, 9153, 8655, 8074, 7849, 7573, 7756, 8527],
+        tempTableHeader: ['日期', '2020-06-01 00:00', '2020-06-01 01:00', '2020-06-01 02:00', '2020-06-01 03:00', '2020-06-01 04:00', '2020-06-01 05:00', '2020-06-01 06:00', '2020-06-01 07:00'],
+        tempTableData: [26.5, 26.2, 26.0, 25.8, 25.7, 26.0, 26.2, 26.8]
+      }
+    },
     mounted () {
       this.initShortTermChart()
       window.addEventListener('resize', () => {
@@ -330,25 +372,6 @@
     min-height: 100vh;
     overflow-y: auto;
   }
-  .header {
-    display: flex;
-    justify-content: space-between;
-    background-color: #0a1d4d;
-    color: rgb(27,243,248);
-    padding: 10px;
-    font-weight: bold;
-    border-bottom: 2px solid #00aaff;
-    font-size: 18px;
-  }
-
-  .header1 {
-    font-size: 25px;
-  }
-
-  .header2 {
-    margin-top: 6px;
-  }
-
   .content {
     align-self: center;
     max-width: 1325px;
@@ -409,4 +432,44 @@
     margin-bottom: 10px;
     color: rgb(27,243,248);
   }
-  </style>
+  .table-container {
+  background-color: #0a1d4d;
+  border: 1px solid #00aaff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.load-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.load-table th,
+.load-table td {
+  padding: 10px;
+  text-align: left;
+  color: white;
+  border: 1px solid #333;
+}
+
+.load-table th {
+  background-color: #002d66;
+}
+.temp-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.temp-table th,
+.temp-table td {
+  padding: 10px;
+  text-align: left;
+  color: white;
+  border: 1px solid #333;
+}
+
+.temp-table th {
+  background-color: #002d66;
+}
+</style>
