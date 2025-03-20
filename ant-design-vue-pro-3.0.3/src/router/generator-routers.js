@@ -2,6 +2,7 @@
 import * as loginService from '@/api/login'
 // eslint-disable-next-line
 import { BasicLayout, BlankLayout, PageView, RouteView } from '@/layouts'
+import AISetting from '@/views/form/aisetting/AISetting.vue'
 
 // 前端路由表
 const constantRouterComponents = {
@@ -23,6 +24,7 @@ const constantRouterComponents = {
   BasicForm: () => import('@/views/form/basicForm'),
   StepForm: () => import('@/views/form/stepForm/StepForm'),
   AdvanceForm: () => import('@/views/form/advancedForm/AdvancedForm'),
+  AISetting: () => import('@/views/form/aisetting/AISetting'),
 
   // list
   SystemLog: () => import('@/views/list/SystemLog'),

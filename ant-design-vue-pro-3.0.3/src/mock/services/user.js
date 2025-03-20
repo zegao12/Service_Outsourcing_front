@@ -934,6 +934,15 @@ const userNav = options => {
       component: 'DataUpload'
     },
     {
+      name: 'AISetting',
+      parentId: 20001,
+      id: 20010,
+      meta: {
+        title: '模型升级部署'
+      },
+      component: 'AISetting'
+    },
+    {
       name: 'BasicSettings',
       path: '/account/settings/basic',
       parentId: 20001,
