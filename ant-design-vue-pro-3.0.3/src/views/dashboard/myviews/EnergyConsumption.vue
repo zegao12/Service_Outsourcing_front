@@ -202,11 +202,18 @@
         </div>
         <div class="content1">
           <div class="section left">
-            <div class="section-header ">超短时功率预测曲线 (4小时)</div>
-            <div class="chart" ref="shortTermChart"></div>
+            <div
+              style=" text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 0;margin-bottom: 0px;font-weight: 1000;font-size: 22px;" >
+              当日逐时趋势
+            </div>
+            <!-- <div class="section-header" style="text-align: left;font-size: large;color: white;">负荷-气温曲线</div> -->
+            <div class="chart" ref="shortTermChart" ></div>
+
           </div>
           <div class="section right" padding="20px">
-            <div class="section-header ">超短时功率预测曲线 (4小时)</div>
             <div class="chart" ref="ultraShortTermChart"></div>
           </div>
         </div>
@@ -227,40 +234,214 @@ export default {
   methods: {
     initShortTermChart () {
       const chartDom = this.$refs.shortTermChart
-      const myChart = echarts.init(chartDom)
+      const myChart = echarts.init(chartDom, { height: 400 })
       const option = {
-        xAxis: { splitLine: { show: false, width: 1 } },
-        yAxis: { splitLine: { show: true, lineStyle: { type: 'dashed' } } },
+        tooltip: {
+    trigger: 'axis'
+  },
+  toolbox: {
+                show: true,
+                feature: {
+                    dataZoom: {
+                        yAxisIndex: 'none'
+                    },
+                    dataView: { readOnly: false },
+                    magicType: { type: ['line', 'bar'] },
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '15%',
+            containLabel: true
+        },
+        legend: {
+          data: [
+        {
+            name: '今日',
+             icon: 'path://M2,2 h20 a5,5 0 0 1 5,5 v10 a5,5 0 0 1 -5,5 h-20 a5,5 0 0 1 -5,-5 v-10 a5,5 0 0 1 5,-5 z',
+            itemStyle: {
+                color: 'rgba(174,164,231,1)',
+                width: 20
+            }
+        },
+        {
+            name: '昨日',
+            icon: 'path://M2,2 h20 a5,5 0 0 1 5,5 v10 a5,5 0 0 1 -5,5 h-20 a5,5 0 0 1 -5,-5 v-10 a5,5 0 0 1 5,-5 z',
+            itemStyle: {
+                color: 'rgb(24, 225, 230)',
+                width: 20,
+                borderRadius: 8
+            }
+        }
+    ],
+            textStyle: {
+              color: 'white'
+            },
+            bottom: '0%',
+            left: 'center',
+            orient: 'horizontal', // 水平排列
+            icon: 'rect',
+            itemStyle: {
+                borderRadius: 8
+            }
+        },
+        xAxis: { splitLine: { show: false },
+        axisLabel: {
+                    textStyle: {
+                        color: 'white'
+                    },
+                    formatter: function (value) {
+                        return value + '时'
+                    }
+                },
+                data: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]
+      },
+        yAxis: { splitLine: { show: true, lineStyle: { type: 'solid', color: 'rgba(128,128,128,0.5)' } },
+name: 'kw·h',
+nameLocation: 'end',
+      nameGap: 30,
+      nameTextStyle: {
+        color: 'white',
+        fontSize: 14
+      },
+textStyle: { color: 'white' } },
         series: [{
-          data: [[0, -1.96], [12, 82.85], [18, -2], [24, 1], [30, 2], [36, 54.76], [42, 0], [48, 0], [54, 38.55], [60, 60], [66, 22.22], [72, 0]],
+          name: '今日',
+          data: [
+                        100, 150, 200, 300, 450, 550, 580, 520, 450, 350, 250, 180, 120
+                    ],
           type: 'line',
+          areaStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                    {
+                        offset: 0,
+                        color: 'rgba(174,164,231,1)'
+                    },
+                    {
+                        offset: 1,
+                        color: 'rgba(174,164,231, 0)'
+                    }
+                ])
+            },
           lineStyle: {
-      normal: {
-        color: 'rgb(223,126,133)'
-      }
+        color: 'rgba(174,164,231,1)'
     },
           smooth: true
-        }]
+        },
+        {
+          name: '昨日',
+          data: [
+                        120, 130, 140, 160, 180, 200, 220, 240, 230, 210, 190, 170, 150
+                    ],
+          type: 'line',
+          areaStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                    {
+                        offset: 0,
+                        color: 'rgba(24, 225, 230, 1)'
+                    },
+                    {
+                        offset: 1,
+                        color: 'rgba(24, 225, 230, 0)'
+                    }
+                ])
+            },
+          lineStyle: {
+        color: 'rgb(24, 225, 230)'
+    },
+          smooth: true
+        }
+      ]
       }
       myChart.setOption(option)
     },
     initUltraShortTermChart () {
       const chartDom = this.$refs.ultraShortTermChart
-      const myChart = echarts.init(chartDom)
+      const myChart = echarts.init(chartDom, { height: 400 })
       const option = {
-        xAxis: { splitLine: { show: false, width: 1 } },
-        yAxis: { splitLine: { show: true, lineStyle: { type: 'dashed' } } },
-        series: [{
-          data: [[50, 80], [70, 90], [120, 85], [150, 75], [180, 60], [200, 45], [220, 30], [240, 15], [230, 20], [210, 35], [190, 50], [170, 65], [140, 70], [110, 80], [90, 40], [60, 55], [40, 60], [20, 70]],
-          type: 'line',
-          lineStyle: {
-      normal: {
-        color: 'rgb(223,126,133)'
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: ['当月', '上月'],
+    textStyle: {
+      color: 'white'
+    }
+  },
+  toolbox: {
+    show: true,
+    feature: {
+      dataView: { show: true, readOnly: false },
+      magicType: { show: true, type: ['line', 'bar'] },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  calculable: true,
+  xAxis: [
+    {
+      type: 'category',
+      data: ['1日', '3日', '5日', '7日', '9日', '11日', '13日', '15日', '17日', '19日', '21日', '23日', '25日', '27日', '29日', '31日'],
+      axisLabel: {
+        color: 'white'
+    }
+  }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      name: 'kw·h',
+      nameLocation: 'end',
+      nameGap: 30,
+      nameTextStyle: {
+        color: 'white',
+        fontSize: 14
+      },
+      splitLine: {
+                show: true, // 是否显示分隔线，默认为 true
+                lineStyle: {
+                    color: 'rgba(128,128,128,0.5)',
+                    width: 1, // 分隔线宽度
+                    type: 'solid' // 分隔线样式，'solid' 为实线，'dashed' 为虚线
+                }
+            }
+    }
+  ],
+  series: [
+    {
+      name: '当月',
+      type: 'bar',
+      data: [
+5200, 12800, 3400, 16500, 4100, 14300, 7800, 17900, 3200, 15600, 6700, 13200, 9100, 17100, 4500, 16200,
+8300, 11800, 12400, 17600, 3900, 13700, 7400, 15900, 5800, 18100, 4900, 14700, 8600, 16300, 6100
+],
+      lineStyle: {
+        color: 'rgb(46,200,206)'
+      },
+      itemStyle: {
+        color: 'rgb(46,200,206)'
       }
     },
-          smooth: true
-        }]
+    {
+      name: '上月',
+      type: 'bar',
+      data: [
+3600, 14900, 5300, 16800, 3900, 12100, 8700, 17300, 4400, 15200, 7200, 13900, 10200, 16600, 4700, 15800,
+9500, 11400, 13100, 17800, 3700, 14200, 7900, 16400, 6300, 18300, 5100, 15100, 9300, 16700, 6600
+],
+
+      lineStyle: {
+        color: 'rgb(174,164,231)'
+      },
+      itemStyle: {
+        color: 'rgb(174,164,231)'
       }
+    }
+  ]
+}
       myChart.setOption(option)
     }
   }
@@ -529,18 +710,15 @@ export default {
     margin-top: 10px;
   }
 .section {
-  background-color: #0a1d4d; /* 背景色与右侧盒子统一 */
-  border: 2px solid #00aaff; /* 边框颜色与右侧盒子统一 */
-  border-radius: 8px; /* 圆角与右侧盒子统一 */
+
   padding: 15px; /* 内边距与右侧盒子统一 */
   color: #ffffff; /* 文字颜色与右侧盒子统一 */
   font-family: Arial, sans-serif;
 }
 .chart {
-  height: 300px;
-  background-color: #0a1d4d;/* 图表背景色 */
-  border: 1px solid #d9d9d9; /* 图表边框 */
-  border-radius: 5px; /* 图表圆角 */
+  /* display: absolute;
+  bottom: 0px; */
+  height: 500px;
   margin-top: 10px; /* 与标题的间距 */
   align-self: center;
 }
