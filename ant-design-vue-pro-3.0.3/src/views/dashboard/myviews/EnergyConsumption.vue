@@ -204,9 +204,9 @@
           <div class="section left">
             <div
               style=" text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 5px 0;margin-bottom: 0px;font-weight: 1000;font-size: 22px;" >
+              font-size: 18px;
+              font-weight: bold;
+              padding: 5px 0;margin-bottom: 0px;font-weight: 1000;font-size: 22px;" >
               当日逐时趋势
             </div>
             <!-- <div class="section-header" style="text-align: left;font-size: large;color: white;">负荷-气温曲线</div> -->
@@ -230,6 +230,10 @@ export default {
   mounted () {
     this.initShortTermChart()
     this.initUltraShortTermChart()
+    window.addEventListener('resize', this.resizeCharts)
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.resizeCharts)
   },
   methods: {
     initShortTermChart () {
@@ -357,6 +361,7 @@ textStyle: { color: 'white' } },
       ]
       }
       myChart.setOption(option)
+      this.shortTermChart = myChart
     },
     initUltraShortTermChart () {
       const chartDom = this.$refs.ultraShortTermChart
@@ -443,6 +448,22 @@ textStyle: { color: 'white' } },
   ]
 }
       myChart.setOption(option)
+      this.ultraShortTermChart = myChart
+    },
+    resizeCharts () {
+      if (this.shortTermChart) {
+        const chartDom = this.$refs.shortTermChart
+        // 获取容器的实际宽度和高度
+        const width = chartDom.offsetWidth
+        const height = chartDom.offsetHeight
+        this.shortTermChart.resize({ width, height })
+      }
+      if (this.ultraShortTermChart) {
+        const chartDom = this.$refs.ultraShortTermChart
+        const width = chartDom.offsetWidth
+        const height = chartDom.offsetHeight
+        this.ultraShortTermChart.resize({ width, height })
+      }
     }
   }
 }
@@ -710,7 +731,6 @@ textStyle: { color: 'white' } },
     margin-top: 10px;
   }
 .section {
-
   padding: 15px; /* 内边距与右侧盒子统一 */
   color: #ffffff; /* 文字颜色与右侧盒子统一 */
   font-family: Arial, sans-serif;
@@ -721,6 +741,7 @@ textStyle: { color: 'white' } },
   height: 500px;
   margin-top: 10px; /* 与标题的间距 */
   align-self: center;
+  width: 100%;
 }
 .section-header {
   text-align: center;

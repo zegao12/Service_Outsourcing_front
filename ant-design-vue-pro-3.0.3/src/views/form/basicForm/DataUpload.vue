@@ -18,7 +18,7 @@
           style="text-align: center"
         >
           <a-button htmlType="submit" type="primary">{{ $t('form.basic-form.form.datasubmit') }}</a-button>
-          <a-button style="margin-left: 8px">{{ $t('form.basic-form.form.predict') }}</a-button>
+          <a-button style="margin-left: 8px" @click="handlePredict">{{ $t('form.basic-form.form.predict') }}</a-button>
         </a-form-item>
       </a-form>
     </a-card>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { Form } from 'ant-design-vue' // 确保引入了 Form 组件
+import { Form, message } from 'ant-design-vue' // 确保引入了 Form 组件
 
 export default {
   name: 'BaseForm',
@@ -46,8 +46,15 @@ export default {
         if (!err) {
           console.log('Received values of form: ', values)
           // 这里可以添加发送数据到后端的逻辑
+          // 假设数据发送成功（实际应用中需要根据后端返回状态判断）
+          message.success('上传成功')
         }
       })
+    },
+    handlePredict () {
+      // 这里可以添加实际的预测逻辑，比如调用后端接口进行预测
+      // 假设预测成功（实际应用中需要根据实际情况判断）
+      message.success('预测成功')
     }
   }
 }
