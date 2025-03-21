@@ -2,13 +2,12 @@
   <div class="app-container">
     <div class="header">
       <div class="header2">返回首页</div>
-      <div class="header1">安科瑞功率预测系统</div>
       <div class="header2">注销</div>
     </div>
 
     <div class="content">
       <div class="section left">
-        <div class="section-header ">超短时功率预测曲线 (4小时)</div>
+        <div class="section-header ">超短时功率预测曲线 (3天)</div>
         <div class="chart" ref="shortTermChart"></div>
       </div>
 
@@ -29,7 +28,7 @@
       </div>
 
       <div class="section right">
-        <div class="section-header ">预测误差</div>
+        <div class="section-header ">预测误差(4小时)</div>
         <table class="stats-table" >
           <tr><td>均方根</td><td style="color: rgb(27,243,248);">0.12</td></tr>
           <tr><td>平均绝对误差</td><td style="color: rgb(27,243,248);">0.09</td></tr>

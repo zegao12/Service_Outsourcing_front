@@ -2,7 +2,6 @@
   <div class="app-container">
     <div class="header">
       <div class="header2">返回首页</div>
-      <div class="header1">安科瑞功率预测系统</div>
       <div class="header2">注销</div>
     </div>
 
@@ -27,7 +26,7 @@
             <div class="station-row">
               <i class="icon-home"></i>
               <span class="label">站点名称</span>
-              <span class="value">安科瑞电气股份有限公司</span>
+              <span class="value">A电气股份有限公司</span>
             </div>
             <div class="station-row">
               <i class="icon-location"></i>
@@ -37,7 +36,7 @@
             <div class="station-row">
               <i class="icon-altitude"></i>
               <span class="label">海拔高度</span>
-              <span class="value">2.19米</span>
+              <span class="value">300米</span>
             </div>
           </div>
         </div>
@@ -91,7 +90,7 @@
         </div>
 
         <div class="error-box">
-          <div class="error-header">气象信息</div>
+          <div class="install-header">气象信息</div>
           <div class="error-grid">
             <div class="error-item">
               <i class="icon-light"></i>
