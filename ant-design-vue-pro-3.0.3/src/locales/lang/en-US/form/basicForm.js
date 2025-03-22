@@ -60,5 +60,10 @@ export default {
   'form.basic-form.confirm-password.placeholder': 'Confirm password',
   'form.basic-form.phone-number.placeholder': 'Phone number',
   'form.basic-form.verification-code.placeholder': 'Verification code',
-  'form.basic-form.title.modelselect': 'Model selection'
+  'form.basic-form.title.modelselect': 'Model selection',
+  'form.basic-form.title.parameter': 'Whether to freeze part of the parameters',
+  'form.basic-form.parameter.freeze': 'Yes',
+  'form.basic-form.parameter.notfreeze': 'No',
+  'form.basic-form.title.fileUpload': 'File upload',
+  'form.basic-form.form.uploadFile': 'upload'
 }

@@ -57,5 +57,10 @@ export default {
   'form.basic-form.confirm-password.placeholder': '确认密码',
   'form.basic-form.phone-number.placeholder': '手机号',
   'form.basic-form.verification-code.placeholder': '验证码',
-  'form.basic-form.title.modelselect': '模型选择'
+  'form.basic-form.title.modelselect': '模型选择',
+  'form.basic-form.title.parameter': '是否冻结部分参数',
+  'form.basic-form.parameter.freeze': '是',
+  'form.basic-form.parameter.notfreeze': '否',
+  'form.basic-form.title.fileUpload': '文件上传',
+  'form.basic-form.form.uploadFile': '上传'
 }
