@@ -38,7 +38,7 @@
             </a-col>
             <a-col :md="8" :sm="24">
               <a-form-item label="">
-                <a-select v-model="queryParam.headquarters" placeholder="请选择总部" default-value="0">
+                <a-select v-model="queryParam.headquarters" placeholder="请选择总部" default-value="">
                   <a-select-option value="0">澳蓝福州总部</a-select-option>
                 </a-select>
               </a-form-item>
@@ -77,23 +77,15 @@ const columns = [
     dataIndex: 'date'
   },
   {
-    title: '区域1',
-    dataIndex: 'region1'
-  },
-  {
-    title: '区域2',
-    dataIndex: 'region2'
-  },
-  {
-    title: '区域3',
+    title: '区域',
     dataIndex: 'region3'
   },
   {
-    title: '设备',
+    title: '负荷(kW)',
     dataIndex: 'device'
   },
   {
-    title: '表地址',
+    title: '温度(℃)',
     dataIndex: 'meterAddress'
   },
   {
@@ -154,11 +146,9 @@ export default {
         {
           key: '1',
           date: '2021-06-01 17:55',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
           region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          device: '	157.6',
+          meterAddress: '28.5',
           ratio: '0.5',
           activePower: '143.23',
           reactivePower: '23.92',
@@ -168,11 +158,9 @@ export default {
         {
           key: '2',
           date: '2021-06-01 17:50',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
-          region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          region3: '3号表',
+          device: '	140.2',
+          meterAddress: '28.3',
           ratio: '0.5',
           activePower: '132.63',
           reactivePower: '20.32',
@@ -182,11 +170,9 @@ export default {
         {
           key: '3',
           date: '2021-06-01 17:45',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
-          region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          region3: '6号表',
+          device: '	160.8',
+          meterAddress: '28.6',
           ratio: '0.5',
           activePower: '145.03',
           reactivePower: '22.41',
@@ -196,11 +182,9 @@ export default {
         {
           key: '4',
           date: '2021-06-01 17:40',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
-          region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          region3: '4号表',
+          device: '	130.5',
+          meterAddress: '27.9',
           ratio: '0.5',
           activePower: '123.92',
           reactivePower: '24.09',
@@ -210,11 +194,9 @@ export default {
         {
           key: '5',
           date: '2021-06-01 17:35',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
-          region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          region3: '8号表',
+          device: '	115.9',
+          meterAddress: '27.6',
           ratio: '0.5',
           activePower: '109.83',
           reactivePower: '19.92',
@@ -224,11 +206,9 @@ export default {
         {
           key: '6',
           date: '2021-06-01 17:30',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
-          region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          region3: '2号表',
+          device: '168.3',
+          meterAddress: '28.8',
           ratio: '0.5',
           activePower: '152.32',
           reactivePower: '31.09',
@@ -238,11 +218,9 @@ export default {
         {
           key: '7',
           date: '2021-06-01 17:25',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
-          region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          region3: '4号表',
+          device: '145.7',
+          meterAddress: '28.2',
           ratio: '0.5',
           activePower: '132.63',
           reactivePower: '20.32',
@@ -252,11 +230,9 @@ export default {
         {
           key: '8',
           date: '2021-06-01 17:20',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
-          region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          region3: '10号表',
+          device: '158.2',
+          meterAddress: '28.7',
           ratio: '0.5',
           activePower: '145.03',
           reactivePower: '22.41',
@@ -266,11 +242,9 @@ export default {
         {
           key: '9',
           date: '2021-06-01 17:15',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
-          region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          region3: '5号表',
+          device: '128.6',
+          meterAddress: '28.0',
           ratio: '0.5',
           activePower: '123.92',
           reactivePower: '24.09',
@@ -280,11 +254,9 @@ export default {
         {
           key: '10',
           date: '2021-06-01 17:10',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
-          region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          region3: '8号表',
+          device: '113.4',
+          meterAddress: '27.8',
           ratio: '0.5',
           activePower: '109.83',
           reactivePower: '19.92',
@@ -294,11 +266,9 @@ export default {
         {
           key: '11',
           date: '2021-06-01 17:05',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
-          region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          region3: '11号表',
+          device: '170.1',
+          meterAddress: '28.9',
           ratio: '0.5',
           activePower: '152.32',
           reactivePower: '31.09',
@@ -308,11 +278,9 @@ export default {
         {
           key: '12',
           date: '2021-06-01 17:00',
-          region1: '澳蓝福州总部',
-          region2: '模拟机房',
-          region3: '1号表',
-          device: '模拟机房',
-          meterAddress: '0000056776',
+          region3: '12号表',
+          device: '	155.5',
+          meterAddress: '28.5',
           ratio: '0.5',
           activePower: '146.98',
           reactivePower: '26.63',

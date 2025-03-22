@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
     <header class="header">
-      <h1 style="color: white;">AcrelEMS企业微电网能效管理平台</h1>
+      <h1 style="color: white;">A企业微电网能效管理平台</h1>
     </header>
 
     <div class="content">
@@ -25,7 +25,7 @@
             </div>
             <div class="info-row">
               <i class="icon-location"></i>
-              <span>地址: 上海市嘉定区育绿路253号安科瑞电气</span>
+              <span>地址: 杭州市下沙区学源街xxx号</span>
             </div>
             <div class="stats-row">
               <div class="stat-item">

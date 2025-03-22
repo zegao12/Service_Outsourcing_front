@@ -9,7 +9,7 @@
           </a-row>
           <a-row>
             <a-col :sm="8" :xs="24">模型类型：</a-col>
-            <a-col :sm="16" :xs="24">PyTorch-太赫兹图像16类危险物品</a-col>
+            <a-col :sm="16" :xs="24">PyTorch-</a-col>
           </a-row>
           <a-row>
             <a-col :sm="8" :xs="24">操作员姓名：</a-col>

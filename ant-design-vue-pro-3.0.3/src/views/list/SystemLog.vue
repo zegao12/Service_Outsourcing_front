@@ -92,7 +92,7 @@ export default {
         {
           key: '2',
           date: '2020-09-07 23:25:49',
-          event: '升级DPI特征库成功'
+          event: '负荷预测成功'
         },
         {
           key: '3',
@@ -112,7 +112,7 @@ export default {
         {
           key: '6',
           date: '2020-09-07 15:43:27',
-          event: '线路检测: (wan1)线路检测失败'
+          event: '数据上传成功'
         },
         {
           key: '7',

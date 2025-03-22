@@ -7,7 +7,7 @@
         :wrapperCol="wrapperCol"
       >
         <a-select
-          placeholder="2302beta01"
+          placeholder=""
           v-decorator="['paymentUser', { rules: [{required: true, message: '模型版本必须填写'}] }]">
           <a-select-option value="1">2302beta01</a-select-option>
         </a-select>
@@ -26,7 +26,7 @@
           </a-select>
           <a-input
             :style="{width: 'calc(100% - 100px)'}"
-            v-decorator="['payType', { initialValue: '太赫兹图像16类危险物品', rules: [{required: true, message: '模型类型必须填写'}]}]"
+            v-decorator="['payType', { initialValue: '', rules: [{required: true, message: '模型类型必须填写'}]}]"
           />
         </a-input-group>
       </a-form-item>
@@ -42,7 +42,7 @@
         :labelCol="labelCol"
         :wrapperCol="wrapperCol"
       >
-        <a-input v-decorator="['momey', { initialValue: '230222手动升级', rules: [{required: true, message: '操作备注必须填写'}] }]"/>
+        <a-input v-decorator="['momey', { initialValue: '250222手动升级', rules: [{required: true, message: '操作备注必须填写'}] }]"/>
       </a-form-item>
       <a-form-item :wrapperCol="{span: 19, offset: 5}">
         <a-button type="primary" @click="nextStep">下一步</a-button>
