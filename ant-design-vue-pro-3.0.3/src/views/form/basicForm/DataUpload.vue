@@ -9,9 +9,7 @@
           :wrapperCol="{ lg: { span: 10 }, sm: { span: 17 } }"
         >
           <a-select v-model="queryParam.status" placeholder="请选择" default-value="0">
-            <a-select-option value="0">广告位招租</a-select-option>
-            <a-select-option value="1">广告位招租</a-select-option>
-            <a-select-option value="2">广告位招租</a-select-option>
+            <a-select-option value="0">电力负荷预测模型-v1</a-select-option>
           </a-select>
         </a-form-item>
         <!-- 添加目标公开单选框组 -->
@@ -76,17 +74,17 @@ export default {
     }
   },
   methods: {
-    handleSubmit (e) {
-      e.preventDefault()
-      // 这里可以添加提交表单数据的逻辑，例如发送到后端
-      // 目前只是简单地打印表单数据
-      this.form.validateFields((err, values) => {
-        if (!err) {
-          console.log('Received values of form: ', values)
-          message.success('上传成功')
-        }
-      })
-    },
+    // handleSubmit (e) {
+    //   e.preventDefault()
+    //   // 这里可以添加提交表单数据的逻辑，例如发送到后端
+    //   // 目前只是简单地打印表单数据
+    //   this.form.validateFields((err, values) => {
+    //     if (!err) {
+    //       console.log('Received values of form: ', values)
+    //       message.success('上传成功')
+    //     }
+    //   })
+    // },
     handlePredict () {
       message.success('预测成功')
     },
