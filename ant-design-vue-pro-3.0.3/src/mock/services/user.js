@@ -485,7 +485,7 @@ const userNav = options => {
         show: true
       },
       component: 'RouteView',
-      redirect: '/dashboard/workplace'
+      redirect: 'achivement/LoadForecasting'
     },
     {
       name: 'workplace',
@@ -861,7 +861,6 @@ const userNav = options => {
         icon: 'user',
         show: true
       },
-      redirect: '/account/center',
       component: 'RouteView'
     },
     {

@@ -262,6 +262,7 @@
     ],
     series: [
         {
+            showSymbol: false,
             name: '日负荷曲线',
             type: 'line',
             lineStyle: {
@@ -309,6 +310,7 @@
             }
         },
         {
+            showSymbol: false,
             name: '日温度曲线',
             type: 'line',
             lineStyle: {

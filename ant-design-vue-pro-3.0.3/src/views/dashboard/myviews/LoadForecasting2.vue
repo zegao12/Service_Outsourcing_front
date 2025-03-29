@@ -2,6 +2,7 @@
   <div class="app-container">
     <div class="header">
       <div class="header2">返回首页</div>
+      <div class="header1">安科瑞功率预测系统</div>
       <div class="header2">注销</div>
     </div>
 
@@ -26,7 +27,7 @@
             <div class="station-row">
               <i class="icon-home"></i>
               <span class="label">站点名称</span>
-              <span class="value">A电气股份有限公司</span>
+              <span class="value">安科瑞电气股份有限公司</span>
             </div>
             <div class="station-row">
               <i class="icon-location"></i>
@@ -36,7 +37,7 @@
             <div class="station-row">
               <i class="icon-altitude"></i>
               <span class="label">海拔高度</span>
-              <span class="value">300米</span>
+              <span class="value">2.19米</span>
             </div>
           </div>
         </div>
@@ -90,7 +91,7 @@
         </div>
 
         <div class="error-box">
-          <div class="install-header">气象信息</div>
+          <div class="error-header">气象信息</div>
           <div class="error-grid">
             <div class="error-item">
               <i class="icon-light"></i>
@@ -143,6 +144,7 @@ export default {
       const myChart = echarts.init(chartDom)
 
       const option = {
+
     legend: {
         data: ['优化前', '优化后'],
         top: 'top',
@@ -154,6 +156,10 @@ export default {
         }
     },
         xAxis: {
+          axisTick:
+          {
+            show: false
+          },
           name: '(h)',
           nameLocation: 'end',
           nameTextStyle: {
@@ -163,17 +169,23 @@ export default {
          splitLine: { show: false, width: 1 }
         },
         yAxis: {
+          axisTick:
+          {
+            show: false
+          },
           name: '出力/p.u.',
           nameLocation: 'center',
           nameTextStyle: {
             color: 'white',
             padding: 20
           },
-          splitLine: { show: true, lineStyle: { type: 'dashed' } }
+          splitLine: { show: true, lineStyle: { type: 'solid', color: 'rgba(140,140,206,0.7)' } },
+axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', fontWeight: 'bolder' } }
         },
 
         series: [
           {
+            showSymbol: false,
             name: '优化前',
             data: [[0, 0.63], [1, 0.64], [2, 0.66], [3, 0.69], [4, 0.71],
 [5, 0.73], [6, 0.75], [7, 0.76], [8, 0.76], [9, 0.73],
@@ -187,6 +199,7 @@ export default {
 
           },
           {
+            showSymbol: false,
             name: '优化后',
             data: [[0, 0.79], [1, 0.77], [2, 0.74], [3, 0.71], [4, 0.68],
 [5, 0.64], [6, 0.59], [7, 0.54], [8, 0.48], [9, 0.41],
@@ -208,6 +221,12 @@ export default {
       const myChart = echarts.init(chartDom)
 
       const option = {
+        grid:
+          {
+            show: true,
+            borderColor: 'rgba(48,113,169,1)',
+            borderWidth: 2
+          },
         legend: {
         data: ['预测负荷', '实时负荷'],
         top: 'top',
@@ -219,6 +238,10 @@ export default {
         }
     },
         xAxis: {
+          axisTick:
+          {
+            show: false
+          },
           name: '(h)',
           nameLocation: 'end',
           nameTextStyle: {
@@ -228,6 +251,10 @@ export default {
          splitLine: { show: false, width: 1 }
         },
         yAxis: {
+          axisTick:
+          {
+            show: false
+          },
           nameLocation: 'center',
           nameTextStyle: {
             color: 'white',
@@ -237,6 +264,7 @@ export default {
         },
         series: [
         {
+          showSymbol: false,
           name: '预测负荷',
             data: [[0, 0.58], [1, 0.64], [2, 0.64], [3, 0.76], [4, 0.7],
 [5, 0.68], [6, 0.8], [7, 0.69], [8, 0.92], [9, 0.78],
@@ -248,6 +276,7 @@ export default {
 
           },
           {
+          showSymbol: false,
             name: '实时负荷',
             data: [[0, 0.79], [1, 0.93], [2, 0.67], [3, 0.6], [4, 0.77],
 [5, 0.68], [6, 0.6], [7, 0.47], [8, 0.58], [9, 0.44],
@@ -265,7 +294,7 @@ export default {
   }
 }
 </script>
-
+a
 <style scoped>
 .app-container {
   background-color: #0a1d4d;
