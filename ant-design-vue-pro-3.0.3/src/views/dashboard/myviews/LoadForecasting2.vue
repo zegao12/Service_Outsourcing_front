@@ -133,6 +133,7 @@
 import * as echarts from 'echarts'
 
 export default {
+
   name: 'PowerPredictionUI',
   mounted () {
     this.initShortTermChart()
@@ -142,9 +143,9 @@ export default {
     initShortTermChart () {
       const chartDom = this.$refs.shortTermChart
       const myChart = echarts.init(chartDom)
+      var datax = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 
       const option = {
-
     legend: {
         data: ['优化前', '优化后'],
         top: 'top',
@@ -156,6 +157,7 @@ export default {
         }
     },
         xAxis: {
+          data: datax,
           axisTick:
           {
             show: false
@@ -166,9 +168,15 @@ export default {
             color: 'white',
             padding: 10
           },
-         splitLine: { show: false, width: 1 }
+         splitLine: { show: false, width: 1 },
+         axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', fontWeight: 'bolder' } }
         },
         yAxis: {
+          type: 'value',
+          min: 0,
+          max: 1,
+          interval: 0.15,
+          axisLine: { show: false },
           axisTick:
           {
             show: false
@@ -195,8 +203,11 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
 ],
             type: 'line',
             smooth: true,
-            color: 'rgb(249,197,65)'
-
+            color: 'rgb(249,197,65)',
+            lineStyle:
+            {
+              width: 1
+            }
           },
           {
             showSymbol: false,
@@ -209,6 +220,10 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
 ],
             type: 'line',
             smooth: true,
+            lineStyle:
+            {
+              width: 1
+            },
             color: 'rgb(0,255,255)'
           }
         ]
@@ -219,6 +234,7 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
     initUltraShortTermChart () {
       const chartDom = this.$refs.ultraShortTermChart
       const myChart = echarts.init(chartDom)
+      var datax = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 
       const option = {
         grid:
@@ -238,6 +254,7 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
         }
     },
         xAxis: {
+          data: datax,
           axisTick:
           {
             show: false
@@ -248,9 +265,15 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
             color: 'white',
             padding: 10
           },
-         splitLine: { show: false, width: 1 }
+         splitLine: { show: false, width: 1 },
+         axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', fontWeight: 'bolder' } }
+
         },
         yAxis: {
+          type: 'value',
+          min: 200,
+          max: 305,
+          interval: 15,
           axisTick:
           {
             show: false
@@ -260,29 +283,38 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
             color: 'white',
             padding: 20
           },
-          splitLine: { show: true, lineStyle: { type: 'dashed' } }
+          splitLine: { show: true, lineStyle: { type: 'solid', color: 'rgba(140,140,206,0.7)' } },
+          axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', fontWeight: 'bolder' } }
+
         },
         series: [
         {
           showSymbol: false,
           name: '预测负荷',
-            data: [[0, 0.58], [1, 0.64], [2, 0.64], [3, 0.76], [4, 0.7],
-[5, 0.68], [6, 0.8], [7, 0.69], [8, 0.92], [9, 0.78],
-[10, 0.75], [11, 0.56], [12, 0.61], [13, 0.35], [14, 0.39],
-[15, 0.23], [16, 0.39], [17, 0.23], [18, 0.32], [19, 0.08],
-[20, 0.37], [21, 0.06], [22, 0.21], [23, 0.33], [24, 0.55]],
+            data: [[0, 260.9], [1, 267.2], [2, 267.2], [3, 279.8], [4, 273.5],
+[5, 271.4], [6, 284.0], [7, 272.45], [8, 296.6], [9, 281.9],
+[10, 278.75], [11, 258.8], [12, 264.05], [13, 236.75], [14, 240.95],
+[15, 224.15], [16, 240.95], [17, 224.15], [18, 233.6], [19, 208.4],
+[20, 238.85], [21, 206.3], [22, 222.05], [23, 234.65], [24, 257.75]],
             type: 'line',
-            color: 'rgb(249,197,65)'
-
+            color: 'rgb(249,197,65)',
+            lineStyle:
+            {
+              width: 1
+            }
           },
           {
           showSymbol: false,
             name: '实时负荷',
-            data: [[0, 0.79], [1, 0.93], [2, 0.67], [3, 0.6], [4, 0.77],
-[5, 0.68], [6, 0.6], [7, 0.47], [8, 0.58], [9, 0.44],
-[10, 0.3], [11, 0.2], [12, 0.09], [13, 0.27], [14, 0.25],
-[15, 0.24], [16, 0.42], [17, 0.57], [18, 0.5], [19, 0.46],
-[20, 0.65], [21, 0.8], [22, 0.62], [23, 1.0], [24, 0.82]],
+            lineStyle:
+            {
+              width: 1
+            },
+            data: [[0, 282.95], [1, 297.65], [2, 270.35], [3, 263.0], [4, 280.85],
+[5, 271.4], [6, 263.0], [7, 249.35], [8, 260.9], [9, 246.2],
+[10, 231.5], [11, 221.0], [12, 209.45], [13, 228.35], [14, 226.25],
+[15, 225.2], [16, 244.1], [17, 259.85], [18, 252.5], [19, 248.3],
+[20, 268.25], [21, 284.0], [22, 265.1], [23, 305.0], [24, 286.1]],
             type: 'line',
             color: 'rgb(0,255,255)'
           }
