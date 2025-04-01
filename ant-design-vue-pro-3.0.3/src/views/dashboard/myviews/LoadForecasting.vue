@@ -150,12 +150,12 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
             type: 'line',
             lineStyle: {
         normal: {
-          color: 'rgb(0,255,255)',
+          color: 'rgb(255,64,43)',
           width: 1
         }
       },
       itemStyle: {
-          color: 'rgb(0,255,255)'
+          color: 'rgb(255,64,43)'
         },
             smooth: true,
             markLine: {
@@ -232,12 +232,12 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
             type: 'line',
             lineStyle: {
         normal: {
-          color: 'rgb(0,255,255)',
+          color: 'rgb(255,64,43)',
           width: 1
         }
       },
       itemStyle: {
-          color: 'rgb(0,255,255)'
+          color: 'rgb(255,64,43)'
         },
             smooth: true
           }

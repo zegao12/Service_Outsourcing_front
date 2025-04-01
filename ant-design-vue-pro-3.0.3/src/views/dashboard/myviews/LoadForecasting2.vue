@@ -224,7 +224,7 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
             {
               width: 1
             },
-            color: 'rgb(0,255,255)'
+            color: 'rgb(255,64,43)'
           }
         ]
       }
@@ -316,7 +316,7 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
 [15, 225.2], [16, 244.1], [17, 259.85], [18, 252.5], [19, 248.3],
 [20, 268.25], [21, 284.0], [22, 265.1], [23, 305.0], [24, 286.1]],
             type: 'line',
-            color: 'rgb(0,255,255)'
+            color: 'rgb(255,64,43)'
           }
         ]
       }
