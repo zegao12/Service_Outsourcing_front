@@ -482,10 +482,10 @@ const userNav = options => {
       meta: {
         icon: 'dashboard',
         title: '仪表盘',
-        show: true
+        show: false
       },
-      component: 'RouteView',
-      redirect: 'achivement/LoadForecasting'
+      redirect: 'EnergyConsumption',
+      component: 'RouteView'
     },
     {
       name: 'workplace',
@@ -527,7 +527,8 @@ const userNav = options => {
       id: 10,
       meta: {
         icon: 'form',
-        title: '表单页'
+        title: '表单页',
+        show: false
       },
       redirect: '/form/base-form',
       component: 'RouteView'
@@ -568,7 +569,7 @@ const userNav = options => {
       meta: {
         icon: 'table',
         title: '列表页',
-        show: true
+        show: false
       },
       redirect: '/list/table-list',
       component: 'RouteView'
@@ -654,7 +655,7 @@ const userNav = options => {
       meta: {
         title: '详情页',
         icon: 'profile',
-        show: true
+        show: false
       },
       redirect: '/profile/basic',
       component: 'RouteView'
@@ -688,7 +689,7 @@ const userNav = options => {
       meta: {
         title: '结果页',
         icon: 'check-circle-o',
-        show: true
+        show: false
       },
       redirect: '/result/success',
       component: 'PageView'
@@ -724,7 +725,7 @@ const userNav = options => {
       meta: {
         title: '异常页',
         icon: 'warning',
-        show: true
+        show: false
       },
       redirect: '/exception/403',
       component: 'RouteView'
@@ -768,7 +769,7 @@ const userNav = options => {
       meta: {
         title: '个人页',
         icon: 'user',
-        show: true
+        show: false
       },
       redirect: '/account/center',
       component: 'RouteView'
@@ -792,7 +793,7 @@ const userNav = options => {
         title: '个人设置',
         hideHeader: true,
         hideChildren: true,
-        show: true
+        show: false
       },
       redirect: '/account/settings/basic',
       component: 'AccountSettings'
@@ -859,13 +860,13 @@ const userNav = options => {
       meta: {
         title: '成果页',
         icon: 'user',
-        show: true
+        show: false
       },
       component: 'RouteView'
     },
     {
       name: 'LoadForecasting',
-      parentId: 20001,
+      parentId: 0,
       id: 20002,
       meta: {
         title: '负荷预测',
@@ -875,7 +876,7 @@ const userNav = options => {
     },
     {
       name: 'LoadForecasting2',
-      parentId: 20001,
+      parentId: 0,
       id: 20004,
       meta: {
         title: '负荷预测2',
@@ -885,7 +886,7 @@ const userNav = options => {
     },
     {
       name: 'EnergyManage',
-      parentId: 20001,
+      parentId: 0,
       id: 20005,
       meta: {
         title: '能源管理',
@@ -895,7 +896,7 @@ const userNav = options => {
     },
     {
       name: 'EnergyConsumption',
-      parentId: 20001,
+      parentId: 0,
       id: 20006,
       meta: {
         title: '能耗数据统计',
@@ -905,7 +906,7 @@ const userNav = options => {
     },
     {
       name: 'SystemLog',
-      parentId: 20001,
+      parentId: 0,
       id: 20007,
       meta: {
         title: '系统日志',
@@ -915,7 +916,7 @@ const userNav = options => {
     },
     {
       name: 'LoadTemperatureCurve',
-      parentId: 20001,
+      parentId: 0,
       id: 20008,
       meta: {
         title: '负荷-气温曲线',
@@ -925,7 +926,7 @@ const userNav = options => {
     },
     {
       name: 'DataUpload',
-      parentId: 20001,
+      parentId: 0,
       id: 20009,
       meta: {
         title: '数据上传'
@@ -934,7 +935,7 @@ const userNav = options => {
     },
     {
       name: 'AISetting',
-      parentId: 20001,
+      parentId: 0,
       id: 20010,
       meta: {
         title: '模型升级部署'

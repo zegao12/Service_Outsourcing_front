@@ -439,10 +439,10 @@ textStyle: { color: 'white' } },
 ],
 
       lineStyle: {
-        color: 'rgb(174,164,231)'
+        color: 'rgba(174,164,231) '
       },
       itemStyle: {
-        color: 'rgb(174,164,231)'
+        color: 'rgba(174,164,231) '
       }
     }
   ]

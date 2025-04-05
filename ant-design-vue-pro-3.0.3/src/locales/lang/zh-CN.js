@@ -21,7 +21,7 @@ export default {
 
   'layouts.usermenu.dialog.title': '信息',
   'layouts.usermenu.dialog.content': '您确定要注销吗？',
-  'layouts.userLayout.title': '多源电力负荷预测系统',
+  'layouts.userLayout.title': '电力负荷预测系统',
   ...components,
   ...global,
   ...menu,

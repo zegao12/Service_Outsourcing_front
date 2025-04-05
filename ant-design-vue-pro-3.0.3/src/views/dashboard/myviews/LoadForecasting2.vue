@@ -2,7 +2,6 @@
   <div class="app-container">
     <div class="header">
       <div class="header2">返回首页</div>
-      <div class="header1">安科瑞功率预测系统</div>
       <div class="header2">注销</div>
     </div>
 
@@ -27,7 +26,7 @@
             <div class="station-row">
               <i class="icon-home"></i>
               <span class="label">站点名称</span>
-              <span class="value">安科瑞电气股份有限公司</span>
+              <span class="value">A电气股份有限公司</span>
             </div>
             <div class="station-row">
               <i class="icon-location"></i>
@@ -37,7 +36,7 @@
             <div class="station-row">
               <i class="icon-altitude"></i>
               <span class="label">海拔高度</span>
-              <span class="value">2.19米</span>
+              <span class="value">300米</span>
             </div>
           </div>
         </div>
@@ -203,7 +202,7 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
 ],
             type: 'line',
             smooth: true,
-            color: 'rgb(249,197,65)',
+            color: '#ffc800',
             lineStyle:
             {
               width: 1
@@ -224,7 +223,7 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
             {
               width: 1
             },
-            color: 'rgb(255,64,43)'
+            color: 'rgb(0, 255, 200) '
           }
         ]
       }
@@ -297,7 +296,7 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
 [15, 224.15], [16, 240.95], [17, 224.15], [18, 233.6], [19, 208.4],
 [20, 238.85], [21, 206.3], [22, 222.05], [23, 234.65], [24, 257.75]],
             type: 'line',
-            color: 'rgb(249,197,65)',
+            color: '#ffc800',
             lineStyle:
             {
               width: 1
@@ -316,7 +315,7 @@ axisLabel: { show: true, textStyle: { color: 'white', fontFamily: 'SimSun', font
 [15, 225.2], [16, 244.1], [17, 259.85], [18, 252.5], [19, 248.3],
 [20, 268.25], [21, 284.0], [22, 265.1], [23, 305.0], [24, 286.1]],
             type: 'line',
-            color: 'rgb(255,64,43)'
+            color: 'rgb(0, 255, 200) '
           }
         ]
       }
